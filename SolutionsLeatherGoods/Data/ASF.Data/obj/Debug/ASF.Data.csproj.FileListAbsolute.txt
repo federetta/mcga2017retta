@@ -1,0 +1,5 @@
+D:\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Data\ASF.Data\obj\Debug\ASF.Data.csprojResolveAssemblyReference.cache
+D:\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\bin\ASF.Data.dll
+D:\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\bin\ASF.Data.pdb
+D:\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Data\ASF.Data\obj\Debug\ASF.Data.dll
+D:\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Data\ASF.Data\obj\Debug\ASF.Data.pdb
