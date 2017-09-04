@@ -3,3 +3,8 @@ D:\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\bin\ASF.Entities.pdb
 D:\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Entities\obj\Debug\ASF.Entities.csprojResolveAssemblyReference.cache
 D:\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Entities\obj\Debug\ASF.Entities.dll
 D:\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Entities\obj\Debug\ASF.Entities.pdb
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\bin\ASF.Entities.dll
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\bin\ASF.Entities.pdb
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Entities\obj\Debug\ASF.Entities.csprojResolveAssemblyReference.cache
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Entities\obj\Debug\ASF.Entities.dll
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Entities\obj\Debug\ASF.Entities.pdb

@@ -3,3 +3,8 @@ D:\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\bin\ASF.UI.Process.p
 D:\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Presentation\ASF.UI.Process\obj\Debug\ASF.UI.Process.csprojResolveAssemblyReference.cache
 D:\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Presentation\ASF.UI.Process\obj\Debug\ASF.UI.Process.dll
 D:\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Presentation\ASF.UI.Process\obj\Debug\ASF.UI.Process.pdb
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\bin\ASF.UI.Process.dll
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\bin\ASF.UI.Process.pdb
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Presentation\ASF.UI.Process\obj\Debug\ASF.UI.Process.csprojResolveAssemblyReference.cache
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Presentation\ASF.UI.Process\obj\Debug\ASF.UI.Process.dll
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Presentation\ASF.UI.Process\obj\Debug\ASF.UI.Process.pdb
