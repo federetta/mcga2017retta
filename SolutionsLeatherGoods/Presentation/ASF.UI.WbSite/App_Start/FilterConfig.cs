@@ -170,6 +170,14 @@
                     // Allow all fonts from the same domain.
                     Self = true
                 });
+            filters.Add(
+                new CspFontSrcAttribute()
+                {
+                    // Allow fonts from fonts.googleapis.com.
+                    CustomSources = ContentDeliveryNetwork.Google.Fonts,
+                    // Allow all fonts from the same domain.
+                    Self = true
+                });
             // form-action - This directive restricts which URLs can be used as the action of HTML form elements.
             filters.Add(
                 new CspFormActionAttribute()

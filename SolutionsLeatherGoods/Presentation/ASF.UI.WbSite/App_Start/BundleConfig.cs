@@ -14,7 +14,7 @@
             // Set EnableOptimizations to false for debugging. For more information,
             // Web.config file system.web/compilation[debug=true]
             // OR
-            // BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = true;
 
             // Enable CDN usage.
             // Note: that you can choose to remove the CDN if you are developing an intranet application.
@@ -35,7 +35,8 @@
             bundles.Add(new StyleBundle(
                 "~/Content/css")
                 .Include("~/Content/bootstrap/site.css")
-                .Include("~/Content/site.css"));
+                .Include("~/Content/site.css")
+                .Include("~/Content/marco.css"));
 
             // Font Awesome - Icons using font (http://fortawesome.github.io/Font-Awesome/).
             bundles.Add(new StyleBundle(
