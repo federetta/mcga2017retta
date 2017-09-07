@@ -22,5 +22,14 @@ namespace ASF.UI.WbSite.Areas.Categories.Controllers
         {
             return View();
         }
+
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
+
+
 }
