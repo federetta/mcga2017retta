@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ASF.UI.Process;
+using ASF.Entities;
 
 namespace ASF.UI.WbSite.Areas.Categories.Controllers
 {
@@ -18,9 +19,11 @@ namespace ASF.UI.WbSite.Areas.Categories.Controllers
         }
 
         // GET: Categories/Category
-        public ActionResult Detail()
+        public ActionResult Detail(int id)
         {
-            return View();
+            var cp = new CategoryProcess();
+            var lista = cp.FindByID(id);
+            return View(lista);
         }
 
 
@@ -29,7 +32,13 @@ namespace ASF.UI.WbSite.Areas.Categories.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult Create(Category cat)
+        {
+            var cp = new CategoryProcess();
+            cp.add(cat);
+            return RedirectToAction("Index");
+        }
+
     }
-
-
-}
+    }
