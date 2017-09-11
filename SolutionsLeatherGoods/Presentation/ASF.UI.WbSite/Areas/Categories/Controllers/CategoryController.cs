@@ -26,19 +26,37 @@ namespace ASF.UI.WbSite.Areas.Categories.Controllers
             return View(lista);
         }
 
-
+        //Get: Categories/Create
         [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
+        //Post: Categories/Create
         [HttpPost]
         public ActionResult Create(Category cat)
         {
             var cp = new CategoryProcess();
-            cp.add(cat);
+            cp.Add(cat);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        // GET: Categories/Category
+        public ActionResult Edit(int id)
+        {
+            var cp = new CategoryProcess();
+            var lista = cp.FindByID(id);
+            return View(lista);
+        }
+        [HttpPost]
+        // POST: Categories/Category
+        public ActionResult Edit(Category category)
+        {
+            var cp = new CategoryProcess();
+            cp.Edit(category);
+            return RedirectToAction("Index");
+        }
+
 
     }
     }

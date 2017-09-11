@@ -30,18 +30,29 @@ namespace ASF.UI.Process
         /// FindByID
         /// </summary>
         /// <returns></returns>
-        public List<Category> FindByID(int id)
+        public Category FindByID(int id)
         {
-            var response = HttpGet<AllResponse>(baseUrl + "Find/"+ id, new Dictionary<string, object>(), MediaType.Json);
+            var response = HttpGet<FindResponse>(baseUrl + "Find/"+ id, new Dictionary<string, object>(), MediaType.Json);
             return response.Result;
         }
-
-        public void add (Category cat)
+        /// <summary>
+        /// Add Cate
+        /// </summary>
+        /// <param name="cat"></param>
+        public void Add (Category cat)
         {
             var response = HttpPost<Category>(baseUrl + "Add/", cat ,MediaType.Json);
 
         }
-        
+        /// <summary>
+        /// Edit
+        /// </summary>
+        /// <returns></returns>
+        public void Edit(Category cat)
+        {
+            var response = HttpPut<Category>(baseUrl + "Edit/", cat, MediaType.Json);
+           
+        }
 
     }
 }
