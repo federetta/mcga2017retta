@@ -36,7 +36,7 @@ namespace ASF.UI.Process
             return response.Result;
         }
         /// <summary>
-        /// Add Cate
+        /// Add Cat
         /// </summary>
         /// <param name="cat"></param>
         public void Add (Category cat)
@@ -50,9 +50,15 @@ namespace ASF.UI.Process
         /// <returns></returns>
         public void Edit(Category cat)
         {
-            var response = HttpPut<Category>(baseUrl + "Edit/", cat, MediaType.Json);
-           
+            var response = HttpPost<Category>(baseUrl + "Edit/", cat, MediaType.Json);
         }
+
+        public void Delete(Category cat)
+        {
+            var response = HttpGet<FindResponse>(baseUrl + "Remove/" + cat.Id, new Dictionary<string, object>(), MediaType.Json);
+        }
+
+
 
     }
 }

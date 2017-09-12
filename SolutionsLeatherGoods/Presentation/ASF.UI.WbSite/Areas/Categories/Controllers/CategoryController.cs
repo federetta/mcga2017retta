@@ -58,5 +58,23 @@ namespace ASF.UI.WbSite.Areas.Categories.Controllers
         }
 
 
+        [HttpGet]
+        // GET: Categories/Category
+        public ActionResult Delete(int id)
+        {
+            var cp = new CategoryProcess();
+            var lista = cp.FindByID(id);
+            return View(lista);
+        }
+        [HttpPost]
+        // POST: Categories/Category
+        public ActionResult Delete(Category category)
+        {
+            var cp = new CategoryProcess();
+            cp.Delete(category);
+            return RedirectToAction("Index");
+        }
+
+
     }
-    }
+}
