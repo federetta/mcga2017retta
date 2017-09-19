@@ -29,5 +29,12 @@ namespace ASF.Services.Contracts
         public Product Result { get; set; }
     }
 
+    [DataContract]
+    public class FindResponseDealer
+    {
+        [DataMember]
+        public Dealer Result { get; set; }
+    }
+
 }
 

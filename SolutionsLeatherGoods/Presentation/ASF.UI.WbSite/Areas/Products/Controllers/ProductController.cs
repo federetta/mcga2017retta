@@ -30,6 +30,9 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
         // GET: Products/Create
         public ActionResult Create()
         {
+            var dp = new DealerProcess();
+            var lista = dp.SelectList();
+            ViewData["Dealer"] = lista;
             return View();
         }
 
