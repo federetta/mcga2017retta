@@ -1,0 +1,83 @@
+﻿@using ASF.Entities
+@model IEnumerable<ASF.Entities.Product>
+
+
+@{
+    ViewBag.Title = "IndexProduct";
+}
+@{ var listadoDealer = new List<SelectListItem>();
+    foreach (var std in ViewData["Categoria"] as IEnumerable<Category>)
+    {
+        var elemento = new SelectListItem()
+        {
+            Text = std.Name,
+            Value = std.Id.ToString()
+        };
+        listadoDealer.Add(elemento);
+    }
+};
+
+<h2>IndexProduct</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@Html.BeginForm("IndexFilter","Product", FormMethod.Get) 
+{
+    <div class="form-group">
+        <div class="col-md-9">
+            @Html.DropDownList("Category", listadoDealer, new { @class = "btn btn-default dropdown-toggle" })
+        </div>
+        <div class="col-md-3">
+            <button class="btn-primary">Buscar</button>
+        </div>
+    </div>
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DealerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+      
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DealerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |*@
+            </td>
+        </tr>
+    }
+</table>
+

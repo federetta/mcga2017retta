@@ -108,6 +108,28 @@ namespace ASF.Services.Http
                 throw new HttpResponseException(httpError);
             }
         }
+        [HttpGet]
+        [Route("SelectByCat/{id}")]
+        public AllResponseProduct SelectByCat(int id) 
+        {
+            try
+            {
+                var response = new AllResponseProduct();
+                var bp = new ProductBusiness();
+                response.Result = bp.SelectByCat(id);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                var httpError = new HttpResponseMessage()
+                {
+                    StatusCode = (HttpStatusCode)422,
+                    ReasonPhrase = ex.Message
+                };
+
+                throw new HttpResponseException(httpError);
+            }
+        }
 
         [HttpGet]
         [Route("Remove/{id}")]

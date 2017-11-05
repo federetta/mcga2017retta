@@ -1,10 +1,16 @@
 ﻿@model IEnumerable<ASF.Entities.Product>
+@using ASF.Framework.Localization
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+@{
+
+"%Product%".Translated();
+
+}
+
 
 <p>
     @Html.ActionLink("Create New", "Create")

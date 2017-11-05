@@ -64,6 +64,12 @@ namespace ASF.UI.Process
         {
             var response = HttpPost<Product>("rest/Product/Edit", prd, MediaType.Json);
         }
-
+        ///
+        public List<Product> SelectByCat(int id)
+        {
+            var path = "rest/Product/SelectByCat/" + id;
+            var response = HttpGet<AllResponseProduct>(path, new Dictionary<string, object>(), MediaType.Json);
+            return response.Result;
+        }
     }
 }

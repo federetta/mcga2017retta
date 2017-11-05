@@ -21,6 +21,15 @@ namespace ASF.UI.WbSite.Areas.Categories.Controllers
             
         }
 
+        public ActionResult IndexProduct()
+        {
+            var cp = new CategoryProcess();
+            var lista = cp.SelectList();
+            //var lista = DataCache.Instance.CategoryList();
+            return View(lista);
+
+        }
+
         // GET: Categories/Category
         public ActionResult Detail(int id)
         {

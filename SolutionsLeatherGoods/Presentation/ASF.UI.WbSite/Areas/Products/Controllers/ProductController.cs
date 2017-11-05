@@ -18,6 +18,22 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
             return View(lista);
         }
 
+
+        public ActionResult IndexFilter(int Category = -1)
+        {
+            
+            var cp = new CategoryProcess();
+            var pp = new ProductProcess();
+            ViewData["Categoria"] = cp.SelectList();
+            var lista = new List<Product>();
+            if(Category > -1)
+                lista = pp.SelectByCat(Category);
+            
+            //var lista = DataCache.Instance.CategoryList();
+            return View(lista);
+            
+        }
+
         // GET: Products/Details
         public ActionResult Details(int id)
         {

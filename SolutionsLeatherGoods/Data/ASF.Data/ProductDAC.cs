@@ -138,6 +138,33 @@ namespace ASF.Data
         }
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>		
+        public List<Product> SelectByCat(int id)
+        {
+            // WARNING! Performance
+            const string sqlStatement = "SELECT [id], [Title], [Description], [Image], [Price] FROM dbo.VW_Poductos WHERE [cid]=@cid";
+
+            var result = new List<Product>();
+            var db = DatabaseFactory.CreateDatabase(ConnectionName);
+            using (var cmd = db.GetSqlStringCommand(sqlStatement))
+            {
+                db.AddInParameter(cmd, "@cid", DbType.Int32, id);
+                using (var dr = db.ExecuteReader(cmd))
+                {
+                    while (dr.Read())
+                    {
+                        var product = LoadProductView(dr); // Mapper
+                        result.Add(product);
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// Crea un nuevo Product desde un Datareader.
         /// </summary>
         /// <param name="dr">Objeto DataReader.</param>
@@ -162,6 +189,20 @@ namespace ASF.Data
             };
             return product;
         }
+
+        private static Product LoadProductView(IDataReader dr)
+        {
+            var product = new Product
+            {
+                Id = GetDataValue<int>(dr, "Id"),
+                Title = GetDataValue<string>(dr, "Title"),
+                Description = GetDataValue<string>(dr, "Description"),
+                Image = GetDataValue<string>(dr, "Image"),
+                Price = GetDataValue<double>(dr, "Price"),
+            };
+            return product;
+        }
+
 
     }
 }

@@ -10,3 +10,12 @@ C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\Solution
 C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Framework\obj\Debug\ASF.Framework.csprojResolveAssemblyReference.cache
 C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Framework\obj\Debug\ASF.Framework.dll
 C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Framework\obj\Debug\ASF.Framework.pdb
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Framework\bin\Debug\ASF.Data.dll
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Framework\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Framework\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Framework\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Framework\bin\Debug\ASF.Entities.dll
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Framework\bin\Debug\ASF.Data.pdb
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Framework\bin\Debug\ASF.Entities.pdb
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Framework\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Shared\ASF.Framework\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
