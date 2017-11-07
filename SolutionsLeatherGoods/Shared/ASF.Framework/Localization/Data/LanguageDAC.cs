@@ -11,7 +11,7 @@ using ASF.Framework.Localization.Enitities;
 
 namespace ASF.Framework.Localization.Data
 {
-    public class LanguageDAC : ASF.Framework.DataAccessComponent
+    public class LanguageDAC : ASF.Data.DataAccessComponent
     {
 
         public Language CreateLanguage(Language language)

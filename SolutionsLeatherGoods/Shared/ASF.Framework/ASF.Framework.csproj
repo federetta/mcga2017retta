@@ -67,11 +67,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Localization\Data\DataAccessComponent.cs" />
     <Compile Include="Localization\Data\LanguageDAC.cs" />
     <Compile Include="Localization\Data\LocaleResourceKeyDAC.cs" />
     <Compile Include="Localization\Data\LocaleStringResourceDAC.cs" />
-    <Compile Include="Localization\Entities\language.cs" />
+    <Compile Include="Localization\Entities\Language.cs" />
     <Compile Include="Localization\Entities\LocaleResourceKey.cs" />
     <Compile Include="Localization\Entities\LocaleStringResource.cs" />
     <Compile Include="Localization\Translator.cs" />
@@ -94,15 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Localization\Data\web.config">
-      <SubType>Designer</SubType>
-    </Content>
-    <None Include="Localization\Data\web.Debug.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
-    <None Include="Localization\Data\web.Release.config">
-      <DependentUpon>web.config</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Data\ASF.Data\ASF.Data.csproj">

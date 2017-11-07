@@ -4,21 +4,18 @@
 @{
     ViewBag.Title = "Index";
 }
-
-@{
-
-"%Product%".Translated();
-
-}
-
+<p>
+    @("Product".Translated())
+</p>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
+    <tr></tr>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Title)
+            @("Product".Translated())
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
@@ -95,11 +92,12 @@
             @Html.DisplayFor(modelItem => item.ChangedBy)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
         </td>
     </tr>
 }
 
 </table>
+<span> @{"%Product%".Translated();}</span>

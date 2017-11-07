@@ -18,13 +18,11 @@
 };
 
 <h2>IndexProduct</h2>
+@HttpContext.Current.Request.Cookies
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 
 @Html.BeginForm("IndexFilter","Product", FormMethod.Get) 
-{
+
     <div class="form-group">
         <div class="col-md-9">
             @Html.DropDownList("Category", listadoDealer, new { @class = "btn btn-default dropdown-toggle" })
@@ -33,7 +31,7 @@
             <button class="btn-primary">Buscar</button>
         </div>
     </div>
-}
+
 <table class="table">
     <tr>
         <th>
@@ -41,9 +39,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Description)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DealerId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Image)
@@ -63,9 +58,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DealerId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Image)

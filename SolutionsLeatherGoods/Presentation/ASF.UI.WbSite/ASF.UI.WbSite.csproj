@@ -353,7 +353,6 @@
     <Content Include="Areas\Categories\Views\Category\Delete.cshtml" />
     <Content Include="Areas\Products\Views\web.config" />
     <Content Include="Areas\Products\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Products\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Products\Views\Product\Index.cshtml" />
     <Content Include="Areas\Products\Views\Product\Details.cshtml" />
     <Content Include="Areas\Products\Views\Product\Create.cshtml" />
@@ -571,6 +570,7 @@
     <Folder Include="Areas\OrderNumbers\Models\" />
     <Folder Include="Areas\Orders\Models\" />
     <Folder Include="Areas\Products\Models\" />
+    <Folder Include="Areas\Products\Views\Shared\" />
     <Folder Include="Areas\Ratings\Models\" />
     <Folder Include="Areas\Settings\Models\" />
     <Folder Include="Areas\Settings\Views\Shared\" />

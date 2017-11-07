@@ -47,11 +47,8 @@ namespace ASF.Framework.Localization
         /// <returns>Cadena traducida</returns>
         public static string Translate(string cadena)
         {
-            foreach (Match item in reg.Matches(cadena)) //Busca todas las posibles keys en la cadena
-            {
-                if (Diccionario.ContainsKey(item.Value)) ///buscar texto a remplazar
-                    cadena = cadena.Replace(item.Value, Diccionario[item.Value]); //Remplaza las keys por las cadenas
-            }
+                if (Diccionario.ContainsKey(cadena)) ///buscar texto a remplazar
+                    cadena = cadena.Replace(cadena, Diccionario[cadena]); //Remplaza las keys por las cadenas
             return cadena;
         }
 
