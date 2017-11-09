@@ -201,3 +201,4 @@ C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\Solution
 C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Presentation\ASF.UI.WbSite\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
 C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Presentation\ASF.UI.WbSite\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
 C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Presentation\ASF.UI.WbSite\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
+C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Presentation\ASF.UI.WbSite\bin\GridMvc.dll

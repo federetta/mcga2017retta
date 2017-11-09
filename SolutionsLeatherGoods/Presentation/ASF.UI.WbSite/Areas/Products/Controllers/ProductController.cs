@@ -18,7 +18,7 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
             return View(lista);
         }
 
-       [Authorize]
+       //[Authorize]
         public ActionResult IndexFilter(int Category = -1)
         {
             
