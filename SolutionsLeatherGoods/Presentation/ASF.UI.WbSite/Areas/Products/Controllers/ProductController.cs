@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using ASF.UI.Process;
 using ASF.Entities;
+using System.IO;
+
 
 namespace ASF.UI.WbSite.Areas.Products.Controllers
 {
@@ -54,8 +56,32 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
 
         [HttpPost]
         // POST: Products/Create
-        public ActionResult Create(Product prd)
+        public ActionResult Create(Product prd, HttpPostedFileBase file)
         {
+            //if (ModelState.IsValid)
+            //{
+            //    var originalFilename = Path.GetFileName(prd.Image);
+            //    var path = Path.Combine(Server.MapPath("~/Uploads/Photo/"));
+            //    prd.Image = path;
+            //    File1.SaveAs(path)
+            //}
+            if (file != null && file.ContentLength > 0)
+                try
+                {
+
+                    string path = Path.Combine(Server.MapPath("~/Content/files"), Path.GetFileName(file.FileName));
+                    file.SaveAs(path);
+                    ViewBag.Message = "File uploaded Successfully";
+                }
+                catch (Exception ex)
+                {
+
+                    ViewBag.Message = "Error:" + ex.Message.ToString();
+                }
+            else
+            {
+                ViewBag.Message = "You have not Specified a file";
+            }
             var pp = new ProductProcess();
             pp.Insert(prd);
             return RedirectToAction("Index");

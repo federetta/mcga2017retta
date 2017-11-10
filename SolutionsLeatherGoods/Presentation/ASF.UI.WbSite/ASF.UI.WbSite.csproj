@@ -445,6 +445,10 @@
     <None Include="NWebsecConfig\HttpHeaderSecurityModuleConfig.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile2.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="ReadMe.html" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Content\fonts\fontawesome\fontawesome-webfont.svg" />

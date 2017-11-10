@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="SolutionLeatherGoods" />
+  <setParameter name="DefaultConnection-Web.config Connection String" value="Data Source=.\SQLEXPRESS;Initial Catalog=LeatherGoods;User ID=fretta;Password=Napoli10" />
+  <setParameter name="ASF-Web.config Connection String" value="Data Source=.\SQLEXPRESS;Initial Catalog=LeatherGoods;User ID=fretta;Password=Napoli10" />
+  <setParameter name="default-Web.config Connection String" value="Data Source=.\SQLEXPRESS;Initial Catalog=LeatherGoods;User ID=fretta;Password=Napoli10" />
+</parameters>

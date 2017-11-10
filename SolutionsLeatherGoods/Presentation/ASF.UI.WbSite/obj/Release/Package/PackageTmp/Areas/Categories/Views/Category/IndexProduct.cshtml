@@ -1,0 +1,42 @@
+﻿@using ASF.Entities
+@model IEnumerable<ASF.Entities.Category>
+
+
+@{
+    ViewBag.Title = "IndexProduct";
+}
+@{ var listadoDealer = new List<SelectListItem>();
+    foreach (var std in Model)
+    {
+        var elemento = new SelectListItem()
+        {
+            Text = std.Name,
+            Value = std.Id.ToString()
+        };
+        listadoDealer.Add(elemento);
+    }
+};
+
+<h2>IndexProduct</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.DropDownList("Category", listadoDealer, new { @class = "btn btn-default dropdown-toggle" })
+            @*@Html.EditorFor(model => model.DealerId, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DealerId, "", new { @class = "text-danger" })*@
+        </div>
+    </div>
+@*@foreach (var item in Model)
+{
+<div class="form-group">
+    <div class="col-md-10">
+        @Html.DropDownList("DealerId",(IEnumerable<item>), new { @class = "btn btn-default dropdown-toggle" })
+
+    </div>
+</div>
+}*@

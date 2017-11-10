@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Este archivo se usa en el proceso de publicación y empaquetado del proyecto web. Para personalizar el comportamiento de este proceso,
+edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 para obtener más información. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_NewBackgroundProfile>True</_NewBackgroundProfile>
+    <_PublishTargetUrl>C:\MCGA\ASF.HOSTS.WEB</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="bin/ASF.Business.dll">
+      <publishTime>11/10/2017 14:11:09</publishTime>
+    </File>
+    <File Include="bin/ASF.Data.dll">
+      <publishTime>11/10/2017 13:37:38</publishTime>
+    </File>
+    <File Include="bin/ASF.Entities.dll">
+      <publishTime>11/10/2017 13:37:38</publishTime>
+    </File>
+    <File Include="bin/ASF.Hosts.Web.dll">
+      <publishTime>11/10/2017 14:11:10</publishTime>
+    </File>
+    <File Include="bin/ASF.Services.Contracts.dll">
+      <publishTime>11/10/2017 13:37:39</publishTime>
+    </File>
+    <File Include="bin/ASF.Services.dll">
+      <publishTime>11/10/2017 14:11:09</publishTime>
+    </File>
+    <File Include="bin/ASF.Services.Http.dll">
+      <publishTime>11/10/2017 14:11:09</publishTime>
+    </File>
+    <File Include="bin/ASF.Services.Http.dll.config">
+      <publishTime>08/28/2017 22:19:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll">
+      <publishTime>08/06/2017 12:38:05</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll">
+      <publishTime>08/06/2017 12:38:05</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>06/18/2017 13:57:10</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>08/06/2017 12:38:13</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>08/06/2017 12:38:13</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>08/06/2017 12:38:13</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>08/06/2017 12:38:15</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>08/28/2017 22:20:17</publishTime>
+    </File>
+    <File Include="web.config">
+      <publishTime>11/10/2017 14:11:10</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

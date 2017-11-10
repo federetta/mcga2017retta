@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Presentation\ASF.UI.WbSite\obj\Release\Package\PackageTmp" managedRuntimeVersion="v4.0" />
+  <setAcl path="C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Presentation\ASF.UI.WbSite\obj\Release\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\Users\Fede\Desktop\MCGA\MCGA-2017\MCGA-2017\03\SolutionsLeatherGoods\SolutionsLeatherGoods\Presentation\ASF.UI.WbSite\obj\Release\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>
