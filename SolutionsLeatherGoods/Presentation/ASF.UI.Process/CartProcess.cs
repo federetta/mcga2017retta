@@ -36,7 +36,16 @@ namespace ASF.UI.Process
             var response = HttpGet<FindResponseCart>(path, new Dictionary<string, object>(), MediaType.Json);
             return response.Result;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public Cart Cookie(string cookie)
+        {
+            var path = "rest/Cart/FindByCookie";
+            var response = HttpGet<FindResponseCart>(path, MediaType.Json, cookie);
+            return response.Result;
+        }
         /// <summary>
         /// 
         /// </summary>

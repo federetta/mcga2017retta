@@ -33,10 +33,9 @@
             // Site - Your custom site CSS.
             // Note: No CDN support has been added here. Most likely you will want to customize your copy of bootstrap.
             bundles.Add(new StyleBundle(
-                "~/Content/css")
-                .Include("~/Content/bootstrap/site.css")
-                .Include("~/Content/site.css")
-                .Include("~/Content/marco.css"));
+                 "~/Content/css")
+                 .Include("~/Content/bootstrap/site.css")
+                 .Include("~/Content/site.css"));
 
             // Font Awesome - Icons using font (http://fortawesome.github.io/Font-Awesome/).
             bundles.Add(new StyleBundle(

@@ -107,6 +107,30 @@ namespace ASF.Data
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="cookie"></param>
+        /// <returns></returns>
+        public Cart FindByCookie(string id)
+        {
+            const string sqlStatement = "SELECT [Id], [Cookie], [CartDate], [ItemCount], [Rowid], [CreatedOn], [CreatedBy], [ChangedOn], [ChangedBy] " +
+                "FROM dbo.Cart WHERE [Cookie]= @id ";
+
+            Cart cart = null;
+            var db = DatabaseFactory.CreateDatabase(ConnectionName);
+            using (var cmd = db.GetSqlStringCommand(sqlStatement))
+            {
+                db.AddInParameter(cmd, "@id", DbType.String, id);
+                using (var dr = db.ExecuteReader(cmd))
+                {
+                    if (dr.Read()) cart = LoadCart(dr);
+                }
+            }
+
+            return cart;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
         /// <returns></returns>		
         public List<Cart> Select()
         {

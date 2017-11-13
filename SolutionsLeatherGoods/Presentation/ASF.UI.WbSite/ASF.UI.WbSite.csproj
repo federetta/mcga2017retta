@@ -31,6 +31,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -439,6 +440,7 @@
     <Content Include="Areas\Products\Views\Product\IndexFilter.cshtml" />
     <Content Include="Areas\Categories\Views\Category\IndexProduct.cshtml" />
     <Content Include="Grid.mvc.readme" />
+    <Content Include="Areas\Carts\Views\Cart\FindByCookie.cshtml" />
     <None Include="job_scheduling_data_2_0.xsd">
       <SubType>Designer</SubType>
     </None>

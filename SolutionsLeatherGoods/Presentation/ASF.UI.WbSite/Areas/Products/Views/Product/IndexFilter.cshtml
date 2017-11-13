@@ -25,7 +25,6 @@
 };
 
 <h2>IndexProduct</h2>
-@*HttpContext.Current.Request.Cookies;*@
 
 @Html.BeginForm("IndexFilter","Product", FormMethod.Get) 
 
@@ -108,11 +107,11 @@
     }
 </table>*@
 
-@Html.BeginForm("Create", "CartController", FormMethod.Post)
+@Html.BeginForm("CreateCart", "Product",  FormMethod.Post)
 
 <div class="form-group">
     <div class="col-md-3">
-        <button class="btn-primary">Buscar</button>
+        <button class="btn-primary">Agregar</button>
     </div>
 </div>
 @{Html.EndForm();}

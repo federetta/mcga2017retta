@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Web;
@@ -74,7 +75,29 @@ namespace ASF.UI.Process
             {
                 client.BaseAddress = new Uri(ConfigurationManager.AppSettings["serviceUrl"]);
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(mediaType));
+                
+                var response = client.GetAsync(pathAndQuery).Result;
+                response.EnsureSuccessStatusCode();
 
+                result = response.Content.ReadAsAsync<T>().Result;
+            }
+
+            return result;
+        }
+
+        public static T HttpGet<T>(string pathAndQuery, string mediaType, string cookie)
+        {
+            T result = default(T);
+
+            var cookieContainer = new CookieContainer();
+            using (var handler = new HttpClientHandler() { CookieContainer = cookieContainer })
+            using (var client = new HttpClient(handler))
+            {
+                var baseAddress = new Uri(ConfigurationManager.AppSettings["serviceUrl"]);
+                client.BaseAddress = baseAddress;
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(mediaType));
+
+                cookieContainer.Add(baseAddress, new Cookie("cart", cookie));
                 var response = client.GetAsync(pathAndQuery).Result;
                 response.EnsureSuccessStatusCode();
 

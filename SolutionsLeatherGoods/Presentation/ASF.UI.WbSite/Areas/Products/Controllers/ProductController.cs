@@ -20,7 +20,7 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
             return View(lista);
         }
 
-       //[Authorize]
+       [Authorize]
         public ActionResult IndexFilter(int Category = -1)
         {
             
@@ -53,6 +53,33 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
             ViewData["Dealer"] = lista;
             return View();
         }
+        
+        [HttpPost]
+        // POST: Card/Create
+        public ActionResult CreateCart(Cart cart)
+        {
+            var cp = new CartProcess();
+            cart.CartDate = DateTime.Now;
+            HttpCookie cookie = Request.Cookies[".AspNet.ApplicationCookie"]; 
+            cart.Cookie = cookie.Value;
+            cp.Insert(cart);
+            
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        // POST: CardItem/Create
+        public ActionResult CreateItemCart(Cart cart, Product prod, CartItem item)
+        {
+            var pp = new CartItemProcess();
+            item.CartId = cart.Id;
+            item.ProductId = prod.Id;
+            item.Price = prod.Price;
+            item.Quantity = 1;
+            pp.Insert(item);
+
+            return RedirectToAction("Index");
+        }
+
 
         [HttpPost]
         // POST: Products/Create
@@ -112,6 +139,8 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
             pp.Edit(prd);
             return RedirectToAction("Index");
         }
+
+
 
     }
 }

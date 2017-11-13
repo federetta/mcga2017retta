@@ -27,6 +27,16 @@ namespace ASF.UI.WbSite.Areas.Carts.Controllers
             return View(cart);
         }
 
+        // GET: Carts/Details
+        public ActionResult FindByCookie()
+        {
+            var cp = new CartProcess();
+            HttpCookie cookie = Request.Cookies[".AspNet.ApplicationCookie"];
+            var cart = cp.Cookie(cookie.Value);
+
+            return View(cart);
+        }
+
         // GET: Carts/Create
         public ActionResult Create()
         {
