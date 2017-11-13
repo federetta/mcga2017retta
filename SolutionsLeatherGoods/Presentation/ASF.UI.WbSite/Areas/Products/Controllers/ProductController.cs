@@ -68,12 +68,24 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
         }
         [HttpPost]
         // POST: CardItem/Create
-        public ActionResult CreateItemCart(Cart cart, Product prod, CartItem item)
+        public ActionResult CreateItemCart(int id)
         {
             var pp = new CartItemProcess();
+            var cookie = Request.Cookies[".AspNet.ApplicationCookie"].Value;
+            var cp = new CartProcess();
+            var cart = cp.Cookie(cookie);
+            if(cart == null)
+            {
+                cp.Insert(new Cart()
+                {
+                    CartDate = DateTime.Now,
+                    Cookie = cookie
+                });
+                cart = cp.Cookie(cookie);
+            }
+            var item = new CartItem();
             item.CartId = cart.Id;
-            item.ProductId = prod.Id;
-            item.Price = prod.Price;
+            item.ProductId = id;
             item.Quantity = 1;
             pp.Insert(item);
 
