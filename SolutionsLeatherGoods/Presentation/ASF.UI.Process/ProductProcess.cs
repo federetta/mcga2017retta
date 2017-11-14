@@ -71,5 +71,19 @@ namespace ASF.UI.Process
             var response = HttpGet<AllResponseProduct>(path, new Dictionary<string, object>(), MediaType.Json);
             return response.Result;
         }
+        public List<Product> SelectByCookie(string id)
+        {
+            var path = "rest/Product/SelectByCookie/" + id;
+            var response = HttpGet<AllResponseProduct>(path, new Dictionary<string, object>(), MediaType.Json);
+            return response.Result;
+        }
+        public List<Product> Cookie(string cookie)
+        {
+            var path = "rest/Product/FindByCookie";
+            var clase = "product";
+            var response = HttpGet<AllResponseProduct>(path, MediaType.Json, cookie, clase);
+            return response.Result;
+        }
+
     }
 }

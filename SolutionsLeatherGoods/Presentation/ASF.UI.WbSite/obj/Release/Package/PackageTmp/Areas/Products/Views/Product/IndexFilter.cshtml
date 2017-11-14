@@ -1,6 +1,6 @@
 ﻿@using ASF.Entities
 @model IEnumerable<ASF.Entities.Product>
-@using  GridMvc.Html
+@using GridMvc.Html
 
 <script src="~/Scripts/jquery-3.1.1.min.js"></script>
 <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" type="text/css" />
@@ -26,17 +26,17 @@
 
 <h2>IndexProduct</h2>
 
-@Html.BeginForm("IndexFilter","Product", FormMethod.Get) 
-
+@using (Html.BeginForm("IndexFilter", "Product", FormMethod.Get))
+{
     <div class="form-group">
         <div class="col-md-9">
-            @Html.DropDownList("Category", listadoDealer, new { @class = "btn btn-default dropdown-toggle" })
+            @Html.DropDownList("Category", listadoDealer, new { @class = "btn btn-primary dropdown-toggle" })
         </div>
         <div class="col-md-3">
-            <button class="btn-primary">Buscar</button>
+            <button class="btn btn-primary">Buscar</button>
         </div>
     </div>
-@{Html.EndForm();}
+}
 
 @*<div class="row">
     @foreach (var item in Model)
@@ -106,16 +106,6 @@
         </tr>
     }
 </table>*@
-
-@Html.BeginForm("CreateCart", "Product",  FormMethod.Post)
-
-<div class="form-group">
-    <div class="col-md-3">
-        <button class="btn-primary">Agregar</button>
-    </div>
-</div>
-@{Html.EndForm();}
-
 @Html.Grid(Model).Columns(columns =>
 {
     columns.Add(foo => foo.Title).Sortable(true).Filterable(true).SetWidth(110);
@@ -126,7 +116,7 @@
         .Encoded(false)
         .RenderValueAs(model => new HtmlString
             (
-                "<p>"+ model.Image +"</p>"
+                "<p>" + model.Image + "</p>"
             )
         );
     columns.Add(foo => foo.Price).Sortable(true).Filterable(true);
@@ -136,10 +126,19 @@
        .Encoded(false)
        .RenderValueAs(model => new HtmlString
            (
-               "<button class=\"btn - primary\">Comprar</button>"
+               "<button data-id=" + model.Id + " class=\"btn btn-primary add-item\">Agregar</button>"
            )
        );
 
-
-
 }).WithPaging(10)
+
+
+<script>
+    $(document).ready(function () {
+        $('.add-item').on('click', function (e) {
+            $.post('/Product/CreateItemCart/' + $(e.target).data('id'), null, function (r) {
+                alert('Producto agregado');
+            });
+        });
+    });
+</script>

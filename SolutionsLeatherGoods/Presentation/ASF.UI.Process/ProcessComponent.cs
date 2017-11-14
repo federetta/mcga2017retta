@@ -85,7 +85,7 @@ namespace ASF.UI.Process
             return result;
         }
 
-        public static T HttpGet<T>(string pathAndQuery, string mediaType, string cookie)
+        public static T HttpGet<T>(string pathAndQuery, string mediaType, string cookie, string clase)
         {
             T result = default(T);
 
@@ -97,7 +97,7 @@ namespace ASF.UI.Process
                 client.BaseAddress = baseAddress;
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(mediaType));
 
-                cookieContainer.Add(baseAddress, new Cookie("cart", cookie));
+                cookieContainer.Add(baseAddress, new Cookie(clase, cookie));
                 var response = client.GetAsync(pathAndQuery).Result;
                 response.EnsureSuccessStatusCode();
 
@@ -106,6 +106,8 @@ namespace ASF.UI.Process
 
             return result;
         }
+
+
 
         public static T HttpPost<T>(string path, T value, string mediaType)
         {

@@ -441,6 +441,7 @@
     <Content Include="Areas\Categories\Views\Category\IndexProduct.cshtml" />
     <Content Include="Grid.mvc.readme" />
     <Content Include="Areas\Carts\Views\Cart\FindByCookie.cshtml" />
+    <Content Include="Areas\Products\Views\Product\FindByCookie.cshtml" />
     <None Include="job_scheduling_data_2_0.xsd">
       <SubType>Designer</SubType>
     </None>

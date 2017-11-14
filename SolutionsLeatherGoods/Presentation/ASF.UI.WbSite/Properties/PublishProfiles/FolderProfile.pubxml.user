@@ -32,7 +32,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/18/2017 22:10:03</publishTime>
     </File>
     <File Include="Areas/CartItems/Views/_ViewStart.cshtml">
-      <publishTime>10/22/2017 17:23:14</publishTime>
+      <publishTime>11/12/2017 21:24:54</publishTime>
     </File>
     <File Include="Areas/Carts/Views/Cart/Create.cshtml">
       <publishTime>10/22/2017 17:24:57</publishTime>
@@ -46,8 +46,11 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="Areas/Carts/Views/Cart/Edit.cshtml">
       <publishTime>10/22/2017 17:25:20</publishTime>
     </File>
+    <File Include="Areas/Carts/Views/Cart/FindByCookie.cshtml">
+      <publishTime>11/12/2017 20:43:07</publishTime>
+    </File>
     <File Include="Areas/Carts/Views/Cart/Index.cshtml">
-      <publishTime>10/22/2017 17:24:34</publishTime>
+      <publishTime>11/12/2017 20:48:25</publishTime>
     </File>
     <File Include="Areas/Carts/Views/Shared/_Layout.cshtml">
       <publishTime>10/22/2017 17:24:33</publishTime>
@@ -56,7 +59,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/18/2017 22:10:14</publishTime>
     </File>
     <File Include="Areas/Carts/Views/_ViewStart.cshtml">
-      <publishTime>10/22/2017 17:24:33</publishTime>
+      <publishTime>11/12/2017 21:24:38</publishTime>
     </File>
     <File Include="Areas/Categories/Views/Category/Create.cshtml">
       <publishTime>09/11/2017 21:29:20</publishTime>
@@ -83,7 +86,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/04/2017 19:51:34</publishTime>
     </File>
     <File Include="Areas/Categories/Views/_ViewStart.cshtml">
-      <publishTime>09/04/2017 19:52:12</publishTime>
+      <publishTime>11/12/2017 21:24:21</publishTime>
     </File>
     <File Include="Areas/Clients/Views/Client/Create.cshtml">
       <publishTime>10/22/2017 17:13:42</publishTime>
@@ -107,7 +110,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/18/2017 22:10:26</publishTime>
     </File>
     <File Include="Areas/Clients/Views/_ViewStart.cshtml">
-      <publishTime>10/22/2017 17:12:47</publishTime>
+      <publishTime>11/12/2017 21:25:04</publishTime>
     </File>
     <File Include="Areas/Countries/Views/Country/Create.cshtml">
       <publishTime>10/22/2017 17:15:44</publishTime>
@@ -131,7 +134,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/18/2017 22:10:40</publishTime>
     </File>
     <File Include="Areas/Countries/Views/_ViewStart.cshtml">
-      <publishTime>10/22/2017 17:15:01</publishTime>
+      <publishTime>11/12/2017 21:25:38</publishTime>
     </File>
     <File Include="Areas/Dealers/Views/Dealer/Create.cshtml">
       <publishTime>09/18/2017 20:12:27</publishTime>
@@ -155,7 +158,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/18/2017 20:11:08</publishTime>
     </File>
     <File Include="Areas/Dealers/Views/_ViewStart.cshtml">
-      <publishTime>09/18/2017 20:11:58</publishTime>
+      <publishTime>11/12/2017 21:25:51</publishTime>
     </File>
     <File Include="Areas/OrderDetails/Views/OrderDetail/Create.cshtml">
       <publishTime>10/22/2017 17:17:47</publishTime>
@@ -179,7 +182,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/18/2017 22:10:51</publishTime>
     </File>
     <File Include="Areas/OrderDetails/Views/_ViewStart.cshtml">
-      <publishTime>10/22/2017 17:17:20</publishTime>
+      <publishTime>11/12/2017 21:26:01</publishTime>
     </File>
     <File Include="Areas/OrderNumbers/Views/OrderNumber/Create.cshtml">
       <publishTime>10/22/2017 17:19:15</publishTime>
@@ -203,7 +206,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/18/2017 22:11:49</publishTime>
     </File>
     <File Include="Areas/OrderNumbers/Views/_ViewStart.cshtml">
-      <publishTime>10/22/2017 17:18:45</publishTime>
+      <publishTime>11/12/2017 21:26:15</publishTime>
     </File>
     <File Include="Areas/Orders/Views/Order/Create.cshtml">
       <publishTime>10/22/2017 17:20:30</publishTime>
@@ -227,7 +230,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/18/2017 22:11:58</publishTime>
     </File>
     <File Include="Areas/Orders/Views/_ViewStart.cshtml">
-      <publishTime>10/22/2017 17:20:03</publishTime>
+      <publishTime>11/12/2017 21:26:25</publishTime>
     </File>
     <File Include="Areas/Products/Views/Product/Create.cshtml">
       <publishTime>11/10/2017 10:41:10</publishTime>
@@ -245,7 +248,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/06/2017 22:23:26</publishTime>
     </File>
     <File Include="Areas/Products/Views/Product/IndexFilter.cshtml">
-      <publishTime>11/12/2017 18:55:27</publishTime>
+      <publishTime>11/12/2017 23:49:34</publishTime>
     </File>
     <File Include="Areas/Products/Views/web.config">
       <publishTime>11/05/2017 20:35:08</publishTime>
@@ -275,7 +278,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/18/2017 22:12:11</publishTime>
     </File>
     <File Include="Areas/Ratings/Views/_ViewStart.cshtml">
-      <publishTime>10/22/2017 17:21:40</publishTime>
+      <publishTime>11/12/2017 21:26:44</publishTime>
     </File>
     <File Include="Areas/Settings/Views/web.config">
       <publishTime>09/18/2017 22:12:19</publishTime>
@@ -287,19 +290,19 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>09/10/2013 16:29:20</publishTime>
     </File>
     <File Include="bin/ASF.Data.dll">
-      <publishTime>11/12/2017 18:55:43</publishTime>
+      <publishTime>11/12/2017 23:57:04</publishTime>
     </File>
     <File Include="bin/ASF.Entities.dll">
       <publishTime>11/12/2017 15:47:48</publishTime>
     </File>
     <File Include="bin/ASF.Framework.dll">
-      <publishTime>11/12/2017 18:55:43</publishTime>
+      <publishTime>11/12/2017 23:57:04</publishTime>
     </File>
     <File Include="bin/ASF.Services.Contracts.dll">
       <publishTime>11/12/2017 15:53:09</publishTime>
     </File>
     <File Include="bin/ASF.UI.Process.dll">
-      <publishTime>11/12/2017 18:55:43</publishTime>
+      <publishTime>11/12/2017 23:57:04</publishTime>
     </File>
     <File Include="bin/Autofac.dll">
       <publishTime>07/25/2017 05:11:08</publishTime>
@@ -317,7 +320,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>05/16/2016 10:39:44</publishTime>
     </File>
     <File Include="bin/Boilerplate.Web.Mvc5.Sample.dll">
-      <publishTime>11/12/2017 18:56:38</publishTime>
+      <publishTime>11/12/2017 23:57:06</publishTime>
     </File>
     <File Include="bin/Common.Logging.Core.dll">
       <publishTime>08/03/2017 10:51:40</publishTime>
@@ -851,7 +854,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/12/2017 18:43:08</publishTime>
     </File>
     <File Include="Views/Shared/_LoginPartial.cshtml">
-      <publishTime>08/06/2017 13:06:12</publishTime>
+      <publishTime>11/12/2017 23:46:10</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>08/06/2017 12:41:15</publishTime>
@@ -860,7 +863,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>08/06/2017 12:41:15</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/12/2017 18:57:08</publishTime>
+      <publishTime>11/12/2017 23:57:35</publishTime>
     </File>
   </ItemGroup>
 </Project>

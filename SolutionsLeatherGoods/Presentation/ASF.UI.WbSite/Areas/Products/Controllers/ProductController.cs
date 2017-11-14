@@ -54,18 +54,18 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
             return View();
         }
         
-        [HttpPost]
-        // POST: Card/Create
-        public ActionResult CreateCart(Cart cart)
-        {
-            var cp = new CartProcess();
-            cart.CartDate = DateTime.Now;
-            HttpCookie cookie = Request.Cookies[".AspNet.ApplicationCookie"]; 
-            cart.Cookie = cookie.Value;
-            cp.Insert(cart);
+        //[HttpPost]
+        //// POST: Card/Create
+        //public ActionResult CreateCart(Cart cart)
+        //{
+        //    var cp = new CartProcess();
+        //    cart.CartDate = DateTime.Now;
+        //    HttpCookie cookie = Request.Cookies[".AspNet.ApplicationCookie"]; 
+        //    cart.Cookie = cookie.Value;
+        //    cp.Insert(cart);
             
-            return RedirectToAction("Index");
-        }
+        //    return RedirectToAction("Index");
+        //}
         [HttpPost]
         // POST: CardItem/Create
         public ActionResult CreateItemCart(int id)
@@ -92,6 +92,15 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult FindByCookie()
+        {
+            //var pp = new ProductProcess();
+            var cookie = Request.Cookies[".AspNet.ApplicationCookie"].Value;
+            var cp = new ProductProcess();
+            var prod = cp.Cookie(cookie);
+
+            return View(prod);
+        }
 
         [HttpPost]
         // POST: Products/Create

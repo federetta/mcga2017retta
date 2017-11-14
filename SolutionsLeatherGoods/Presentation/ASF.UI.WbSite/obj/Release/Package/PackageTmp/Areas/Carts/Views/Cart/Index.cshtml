@@ -6,6 +6,17 @@
 
 <h2>Index</h2>
 
+
+@Html.BeginForm("FindByCookie", "Cart", FormMethod.Post)
+
+<div class="form-group">
+    <div class="col-md-3">
+        <input class="form-control" id="Cookie" />
+        <button class="btn-primary">Buscar</button>
+    </div>
+</div>
+
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>

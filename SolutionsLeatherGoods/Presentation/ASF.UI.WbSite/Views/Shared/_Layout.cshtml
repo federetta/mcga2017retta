@@ -179,10 +179,12 @@
                     <li><a href="@Url.RouteUrl(HomeControllerRoute.GetFeed)"><span aria-hidden="true" class="fa fa-rss"></span> RSS</a></li>*@
                     <li>@Html.ActionLink("Productos", "Index", "Product", new { Area = "Products" }, null)</li>
                     <li>@Html.ActionLink("Carrito", "IndexFilter", "Product", new { Area = "Products" }, null)</li>
+                    <li>@Html.ActionLink("CarritoActivo", "FindByCookie", "Product", new { Area = "Products" }, null)</li>
                     <li>@Html.ActionLink("Categorias", "Index", "Category", new { Area = "Categories" }, null)</li>
                     <li>@Html.ActionLink("Clientes", "Index", "Client", new { Area = "Clients" }, null)</li>
                     <li>@Html.ActionLink("Vendedor", "Index", "Dealer", new { Area = "Dealers" }, null)</li>
                     <li>@Html.ActionLink("Paises", "Index", "Country", new { Area = "Countries" }, null)</li>
+
 
 
                     @if (HttpContext.Current.IsDebuggingEnabled)

@@ -72,6 +72,18 @@ namespace ASF.Business
             return result;
         }
 
+        /// <summary>
+        /// Find method.
+        /// </summary>
+        /// <param name="cookie"></param>
+        /// <returns></returns>
+        public List<Product> FindByCookie(string cookie)
+        {
+            var productDac = new ProductDAC();
+            var result = productDac.FindByCookie(cookie);
+            return result;
+        }
+
 
     }
 }

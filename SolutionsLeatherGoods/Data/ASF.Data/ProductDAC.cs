@@ -164,6 +164,29 @@ namespace ASF.Data
             return result;
         }
 
+        public List<Product> FindByCookie(string id)
+        {
+            const string sqlStatement = "SELECT [Title], [Description], [Price] " +
+                "FROM dbo.VW_CarritoActivo WHERE [Cookie]= @id ";
+
+            var result = new List<Product>();
+            var db = DatabaseFactory.CreateDatabase(ConnectionName);
+            using (var cmd = db.GetSqlStringCommand(sqlStatement))
+            {
+                db.AddInParameter(cmd, "@id", DbType.String, id);
+                using (var dr = db.ExecuteReader(cmd))
+                {
+                    while (dr.Read())
+                    {
+                        var product = CarritoActivo(dr); // Mapper
+                        result.Add(product);
+                    }
+                }
+            }
+
+            return result;
+        }
+
         /// <summary>
         /// Crea un nuevo Product desde un Datareader.
         /// </summary>
@@ -198,6 +221,17 @@ namespace ASF.Data
                 Title = GetDataValue<string>(dr, "Title"),
                 Description = GetDataValue<string>(dr, "Description"),
                 Image = GetDataValue<string>(dr, "Image"),
+                Price = GetDataValue<double>(dr, "Price"),
+            };
+            return product;
+        }
+
+        private static Product CarritoActivo(IDataReader dr)
+        {
+            var product = new Product
+            {
+                Title = GetDataValue<string>(dr, "Title"),
+                Description = GetDataValue<string>(dr, "Description"),
                 Price = GetDataValue<double>(dr, "Price"),
             };
             return product;

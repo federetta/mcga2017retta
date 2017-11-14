@@ -132,6 +132,30 @@ namespace ASF.Services.Http
         }
 
         [HttpGet]
+        [Route("FindByCookie")]
+        public AllResponseProduct FindByCookie()
+        {
+            try
+            {
+                var cookie = Request.Headers.GetCookies("product")[0];
+                var response = new AllResponseProduct();
+                var pb = new ProductBusiness();
+                response.Result = pb.FindByCookie(cookie["product"].Value);
+                return response;
+            }
+            catch (Exception ex)
+            {
+                var httpError = new HttpResponseMessage()
+                {
+                    StatusCode = (HttpStatusCode)422,
+                    ReasonPhrase = ex.Message
+                };
+
+                throw new HttpResponseException(httpError);
+            }
+        }
+
+        [HttpGet]
         [Route("Remove/{id}")]
         public void Remove(int id)
         {
