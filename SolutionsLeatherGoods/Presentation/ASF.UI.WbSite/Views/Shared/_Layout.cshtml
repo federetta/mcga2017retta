@@ -130,7 +130,7 @@
     @* Render Facebook Open Graph meta tags. *@
     @if (ViewBag.OpenGraph != null)
     {
-        @Html.OpenGraph((OpenGraphMetadata)ViewBag.OpenGraph);
+        Html.OpenGraph((OpenGraphMetadata)ViewBag.OpenGraph);
     }
     @* Render the Referrer meta tag for increased privacy. *@
     @if (ViewBag.ReferrerMode != null)
@@ -151,7 +151,7 @@
 
 
     @* OpenSearch - (See http://www.hanselman.com/blog/CommentView.aspx?guid=50cc95b1-c043-451f-9bc2-696dc564766d and http://www.opensearch.org) *@
-    <link href="@Url.RouteUrl(HomeControllerRoute.GetOpenSearchXml).TrimEnd('/')" rel="search" title="Architecture Solutions Foundation Search" type="application/opensearchdescription+xml">
+    <link href="@Url.RouteUrl(HomeControllerRoute.GetOpenSearchXml).TrimEnd('/')" rel="search" title="MCGA" type="application/opensearchdescription+xml">
 
 
     @* You can use the head section to render additional meta tags. *@
