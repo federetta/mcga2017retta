@@ -12,6 +12,7 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
 {
     public class ProductController : Controller
     {
+        [Authorize(Roles = "admin")]
         // GET: Products/Product
         public ActionResult Index()
         {
@@ -20,7 +21,7 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
             return View(lista);
         }
 
-       [Authorize]
+        [Authorize(Roles = "user")]
         public ActionResult IndexFilter(int Category = -1)
         {
             
