@@ -20,7 +20,7 @@ namespace ASF.UI.WbSite.Areas.Categories.Controllers
             return View(lista);
             
         }
-
+        [Authorize(Roles = "admin")]
         public ActionResult IndexProduct()
         {
             var cp = new CategoryProcess();
@@ -31,6 +31,7 @@ namespace ASF.UI.WbSite.Areas.Categories.Controllers
         }
 
         // GET: Categories/Category
+        [Authorize(Roles = "admin")]
         public ActionResult Detail(int id)
         {
             var cp = new CategoryProcess();
@@ -39,12 +40,14 @@ namespace ASF.UI.WbSite.Areas.Categories.Controllers
         }
 
         //Get: Categories/Create
+        [Authorize(Roles = "admin")]
         [HttpGet]
         public ActionResult Create()
         {
             return View();
         }
         //Post: Categories/Create
+        [Authorize(Roles = "admin")]
         [HttpPost]
         public ActionResult Create(Category cat)
         {
@@ -52,6 +55,7 @@ namespace ASF.UI.WbSite.Areas.Categories.Controllers
             cp.Add(cat);
             return RedirectToAction("Index");
         }
+        [Authorize(Roles = "admin")]
         [HttpGet]
         // GET: Categories/Category
         public ActionResult Edit(int id)
@@ -60,6 +64,7 @@ namespace ASF.UI.WbSite.Areas.Categories.Controllers
             var lista = cp.FindByID(id);
             return View(lista);
         }
+        [Authorize(Roles = "admin")]
         [HttpPost]
         // POST: Categories/Category
         public ActionResult Edit(Category category)
@@ -69,7 +74,7 @@ namespace ASF.UI.WbSite.Areas.Categories.Controllers
             return RedirectToAction("Index");
         }
 
-
+        [Authorize(Roles = "admin")]
         [HttpGet]
         // GET: Categories/Category
         public ActionResult Delete(int id)
@@ -78,6 +83,7 @@ namespace ASF.UI.WbSite.Areas.Categories.Controllers
             var lista = cp.FindByID(id);
             return View(lista);
         }
+        [Authorize(Roles = "admin")]
         [HttpPost]
         // POST: Categories/Category
         public ActionResult Delete(Category category)

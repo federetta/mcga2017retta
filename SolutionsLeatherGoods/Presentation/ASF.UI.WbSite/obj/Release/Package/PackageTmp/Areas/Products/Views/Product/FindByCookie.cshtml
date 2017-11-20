@@ -1,19 +1,19 @@
 ﻿@using ASF.Entities
 @model IEnumerable<ASF.Entities.Product>
 @using GridMvc.Html
+
 <script src="~/Scripts/jquery-3.1.1.min.js"></script>
 <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" type="text/css" />
 <script src="@Url.Content("~/Scripts/gridmvc.min.js")" type="text/javascript"> </script>
 <script src="~/Scripts/bootstrap.min.js"></script>
 <link href="@Url.Content("~/Content/Css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
-<link href="~/Content/marco.css" rel="stylesheet" />
+
 
 @{
     ViewBag.Title = "FindByCookie";
 }
 
-<h1>Carrito Activo</h1>
-<p><input type =number name="quantity" ></p>
+<h2>Carrito Activo</h2>
 
 @using (Html.BeginForm("FindByCookie", "Product", FormMethod.Get))
 {
@@ -29,15 +29,6 @@
     columns.Add(foo => foo.Title).Sortable(true).Filterable(true).SetWidth(110);
     columns.Add(foo => foo.Description).Sortable(true).Filterable(true);
     columns.Add(foo => foo.Price).Sortable(true).Filterable(true);
-    columns.Add()
-        .Titled("Cantidad")
-        .Sanitized(false)
-        .Encoded(false)
-        .RenderValueAs(model => new HtmlString
-            (
-                "<input type = \"number\" name = \"quantity\">"
-            )
-        );
 }).WithPaging(10)
 
 

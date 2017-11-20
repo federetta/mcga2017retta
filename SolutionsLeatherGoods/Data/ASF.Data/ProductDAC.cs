@@ -141,6 +141,31 @@ namespace ASF.Data
         /// 
         /// </summary>
         /// <returns></returns>		
+        public List<Product> SelectPortada()
+        {
+            // WARNING! Performance
+            const string sqlStatement = "SELECT TOP 4 [Id], [Title], [Description], [DealerId], [Image], [Price], [QuantitySold], [AvgStars], [Rowid], [CreatedOn], [CreatedBy], [ChangedOn], [ChangedBy] FROM dbo.Product WHERE [AvgStars] >= 3 ";
+
+            var result = new List<Product>();
+            var db = DatabaseFactory.CreateDatabase(ConnectionName);
+            using (var cmd = db.GetSqlStringCommand(sqlStatement))
+            {
+                using (var dr = db.ExecuteReader(cmd))
+                {
+                    while (dr.Read())
+                    {
+                        var product = LoadProduct(dr); // Mapper
+                        result.Add(product);
+                    }
+                }
+            }
+
+            return result;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>		
         public List<Product> SelectByCat(int id)
         {
             // WARNING! Performance

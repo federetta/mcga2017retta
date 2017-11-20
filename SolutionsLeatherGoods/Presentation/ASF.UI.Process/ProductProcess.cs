@@ -25,6 +25,12 @@ namespace ASF.UI.Process
             var response = HttpGet<AllResponseProduct>("rest/Product/All", new Dictionary<string, object>(), MediaType.Json);
             return response.Result;
         }
+        public List<Product> SelectPortada()
+        {
+            var response = HttpGet<AllResponseProduct>("rest/Product/SelectPortada", new Dictionary<string, object>(), MediaType.Json);
+            return response.Result;
+        }
+
 
         /// <summary>
         /// 

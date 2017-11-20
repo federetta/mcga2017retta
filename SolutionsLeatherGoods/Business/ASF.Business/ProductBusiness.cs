@@ -40,9 +40,17 @@ namespace ASF.Business
         public List<Product> All()
         {
             var productDac = new ProductDAC();
-            var result = productDac.Select();
+            var result = productDac.SelectPortada();
             return result;
         }
+
+        public List<Product> SelectPortada()
+        {
+            var productDac = new ProductDAC();
+            var result = productDac.SelectPortada();
+            return result;
+        }
+
 
         /// <summary>
         /// Find method.

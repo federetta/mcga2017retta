@@ -21,7 +21,16 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
             return View(lista);
         }
 
-        [Authorize(Roles = "user")]
+
+        //Get: Product/Portada
+        public ActionResult IndexPortada()
+        {
+            var pp = new ProductProcess();
+            var lista = pp.SelectPortada();
+            return View(lista);
+        }
+
+        [Authorize]
         public ActionResult IndexFilter(int Category = -1)
         {
             
@@ -37,7 +46,7 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
             
         }
 
-        // GET: Products/Details
+        [Authorize(Roles = "admin")]
         public ActionResult Details(int id)
         {
             var pp = new ProductProcess();
@@ -46,7 +55,7 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
             return View(prd);
         }
 
-        // GET: Products/Create
+        [Authorize(Roles = "admin")]
         public ActionResult Create()
         {
             var dp = new DealerProcess();
@@ -54,7 +63,7 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
             ViewData["Dealer"] = lista;
             return View();
         }
-        
+
         //[HttpPost]
         //// POST: Card/Create
         //public ActionResult CreateCart(Cart cart)
@@ -64,9 +73,10 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
         //    HttpCookie cookie = Request.Cookies[".AspNet.ApplicationCookie"]; 
         //    cart.Cookie = cookie.Value;
         //    cp.Insert(cart);
-            
+
         //    return RedirectToAction("Index");
         //}
+        [Authorize]
         [HttpPost]
         // POST: CardItem/Create
         public ActionResult CreateItemCart(int id)
@@ -92,7 +102,7 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
 
             return RedirectToAction("Index");
         }
-
+        [Authorize]
         public ActionResult FindByCookie()
         {
             //var pp = new ProductProcess();
@@ -102,7 +112,7 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
 
             return View(prod);
         }
-
+        [Authorize(Roles = "admin")]
         [HttpPost]
         // POST: Products/Create
         public ActionResult Create(Product prd, HttpPostedFileBase file)
@@ -135,7 +145,7 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
             pp.Insert(prd);
             return RedirectToAction("Index");
         }
-
+        [Authorize(Roles = "admin")]
         // GET: Products/Delete
         public ActionResult Delete(int id)
         {
@@ -143,7 +153,7 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
             pp.Delete(id);
             return RedirectToAction("Index");
         }
-
+        [Authorize(Roles = "admin")]
         // GET: Products/Edit
         public ActionResult Edit(int id)
         {
@@ -152,7 +162,7 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
 
             return View(prd);
         }
-
+        [Authorize(Roles = "admin")]
         [HttpPost]
         // POST: Products/Edit
         public ActionResult Edit(Product prd)

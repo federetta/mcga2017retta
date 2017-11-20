@@ -64,6 +64,29 @@ namespace ASF.Services.Http
             }
         }
 
+        [HttpGet]
+        [Route("SelectPortada")]
+        public AllResponseProduct SelectPortada()
+        {
+            try
+            {
+                var response = new AllResponseProduct();
+                var bp = new ProductBusiness();
+                response.Result = bp.SelectPortada();
+                return response;
+            }
+            catch (Exception ex)
+            {
+                var httpError = new HttpResponseMessage()
+                {
+                    StatusCode = (HttpStatusCode)422,
+                    ReasonPhrase = ex.Message
+                };
+
+                throw new HttpResponseException(httpError);
+            }
+        }
+
         [HttpPost]
         [Route("Edit")]
         public void Edit(Product product)
