@@ -112,35 +112,27 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
 
             return View(prod);
         }
-        [Authorize(Roles = "admin")]
+        //[Authorize(Roles = "admin")]
         [HttpPost]
         // POST: Products/Create
-        public ActionResult Create(Product prd, HttpPostedFileBase file)
+        public ActionResult Create(Product prd, HttpPostedFileBase Image)
         {
-            //if (ModelState.IsValid)
-            //{
-            //    var originalFilename = Path.GetFileName(prd.Image);
-            //    var path = Path.Combine(Server.MapPath("~/Uploads/Photo/"));
-            //    prd.Image = path;
-            //    File1.SaveAs(path)
-            //}
-            if (file != null && file.ContentLength > 0)
-                try
-                {
 
-                    string path = Path.Combine(Server.MapPath("~/Content/files"), Path.GetFileName(file.FileName));
-                    file.SaveAs(path);
-                    ViewBag.Message = "File uploaded Successfully";
-                }
-                catch (Exception ex)
-                {
-
-                    ViewBag.Message = "Error:" + ex.Message.ToString();
-                }
-            else
+            if (Image != null)
             {
-                ViewBag.Message = "You have not Specified a file";
+                string pic = System.IO.Path.GetFileName(Image.FileName);
+                string path = System.IO.Path.Combine(Server.MapPath("~/Uploads"));
+
+                //string path = "C:\\Users\\magnin\\Documents\\Maxi";
+                //string path = "D:\\jpg";
+                //Upload file
+                Image.SaveAs(path + "\\" + pic);
+
+                //Save Path on Database
+                prd.Image =  pic;
             }
+
+
             var pp = new ProductProcess();
             pp.Insert(prd);
             return RedirectToAction("Index");

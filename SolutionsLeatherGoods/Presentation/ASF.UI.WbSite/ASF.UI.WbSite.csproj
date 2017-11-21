@@ -597,6 +597,7 @@
     <Folder Include="Areas\Ratings\Models\" />
     <Folder Include="Areas\Settings\Models\" />
     <Folder Include="Areas\Settings\Views\Shared\" />
+    <Folder Include="Uploads\" />
     <Folder Include="Views\Categories\" />
   </ItemGroup>
   <ItemGroup>

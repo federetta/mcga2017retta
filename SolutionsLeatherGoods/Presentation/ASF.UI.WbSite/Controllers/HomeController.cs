@@ -19,6 +19,7 @@ namespace ASF.UI.WbSite.Controllers
     using Boilerplate.Web.Mvc.Filters;
     using ASF.UI.WbSite.Constants;
     using ASF.UI.WbSite.Services;
+    using ASF.UI.Process;
 
     public class HomeController : Controller
     {
@@ -56,20 +57,20 @@ namespace ASF.UI.WbSite.Controllers
 
         #endregion
 
-        [Route("", Name = HomeControllerRoute.GetIndex)]
-        public ActionResult Index()
-        {
-            // ***** sender email credentials (gamil) *****/
-            //var msg = new IdentityMessage
-            //{
-            //    Body = "Prueba",
-            //    Subject = "Prueba de IdentityMessage",
-            //    Destination = "user@emaill"
-            //};
-            //this.emailService.SendAsync(msg);
+        //[Route("", Name = HomeControllerRoute.GetIndex)]
+        //public ActionResult Index()
+        //{
+        //    // ***** sender email credentials (gamil) *****/
+        //    //var msg = new IdentityMessage
+        //    //{
+        //    //    Body = "Prueba",
+        //    //    Subject = "Prueba de IdentityMessage",
+        //    //    Destination = "user@emaill"
+        //    //};
+        //    //this.emailService.SendAsync(msg);
 
-            return this.View(HomeControllerAction.Index);
-        }
+        //    return this.View(HomeControllerAction.Index);
+        //}
 
         [Route("about", Name = HomeControllerRoute.GetAbout)]
         public ActionResult About()
@@ -81,6 +82,13 @@ namespace ASF.UI.WbSite.Controllers
         public ActionResult Contact()
         {
             return this.View(HomeControllerAction.Contact);
+        }
+        [Route("", Name = HomeControllerRoute.GetIndex)]
+        public ActionResult Index()
+        {
+            var pp = new ProductProcess();
+            var lista = pp.SelectPortada();
+            return View(lista);
         }
 
         /// <summary>
