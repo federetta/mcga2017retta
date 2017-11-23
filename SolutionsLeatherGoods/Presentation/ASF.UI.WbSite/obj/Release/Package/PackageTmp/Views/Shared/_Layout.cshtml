@@ -1,6 +1,5 @@
 ﻿@using ASF.UI.WbSite.Constants.HomeController
 <script src="~/Scripts/jquery-3.1.1.min.js"></script>
-<link href="~/Content/marco.css" rel="stylesheet" />
 <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" type="text/css" />
 <script src="@Url.Content("~/Scripts/gridmvc.min.js")" type="text/javascript"> </script>
 <script src="~/Scripts/bootstrap.min.js"></script>
@@ -35,7 +34,10 @@
         "https://plus.google.com/+woorank",
         "https://www.facebook.com/woorank",
         "https://foursquare.com/v/woorank/4e296473149554c77442cc98",
-        "http://www.yelp.com/biz/your-business-url-from-yelp"
+        "http://www.yelp.com/biz/your-business-url-from-yelp",
+        "https://www.youtube.com/user/MTVUKofficial",
+        "https://www.linkedin.com/company/facebook/",
+        "https://www.instagram.com/leomessi/"
         ]
         }
     </script> 
@@ -210,10 +212,10 @@
                     <li><a href="@Url.RouteUrl(HomeControllerRoute.GetFeed)"><span aria-hidden="true" class="fa fa-rss"></span> RSS</a></li>*@
                     <li>@Html.ActionLink("Productos", "Index", "Product", new { Area = "Products" }, null)</li>
                     <li>@Html.ActionLink("Carrito", "IndexFilter", "Product", new { Area = "Products" }, null)</li>
-                    <li>@Html.ActionLink("CarritoActivo", "FindByCookie", "Product", new { Area = "Products" }, null)</li>
+                    <li>@Html.ActionLink("Carrito Activo", "FindByCookie", "Product", new { Area = "Products" }, null)</li>
                    
                     <li class="dropdown">
-                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown"><span aria-hidden="true" class="fa fa-cogs"></span> Debug <span aria-hidden="true" class="caret"></span></a>
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown"><span aria-hidden="true" class="fa fa-cogs"></span> Admin <span aria-hidden="true" class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li>@Html.ActionLink("Categorias", "Index", "Category", new { Area = "Categories" }, null)</li>
                             <li>@Html.ActionLink("Clientes", "Index", "Client", new { Area = "Clients" }, null)</li>

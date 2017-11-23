@@ -20,7 +20,7 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     
@@ -53,13 +53,22 @@
             </div>
         </div>
 
+
         <div class="form-group">
             @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+              
+                @using (Html.BeginForm("Create", "Controller", FormMethod.Post, new
+                { enctype = "multipart/form-data" }))
+                {
+                    @Html.TextBoxFor(model => model.Image, new { type = "file" })
+                    @Html.ValidationMessageFor(model => model.Image)
+
+                }
+              
             </div>
         </div>
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -68,10 +77,7 @@
                 @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
             </div>
         </div>
-        <div>
-            @Html.LabelFor(m => Model.Image)
-            @Html.TextBoxFor(m => Model.Image, new { type = "file" })
-        </div>
+    
 
         @*<div class="form-group">
             @Html.LabelFor(model => model.QuantitySold, htmlAttributes: new { @class = "control-label col-md-2" })

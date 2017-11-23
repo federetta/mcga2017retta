@@ -11,25 +11,25 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/ASF.Business.dll">
-      <publishTime>11/20/2017 12:26:07</publishTime>
+      <publishTime>11/21/2017 08:08:50</publishTime>
     </File>
     <File Include="bin/ASF.Data.dll">
-      <publishTime>11/20/2017 12:03:59</publishTime>
+      <publishTime>11/21/2017 08:03:43</publishTime>
     </File>
     <File Include="bin/ASF.Entities.dll">
       <publishTime>11/12/2017 15:47:48</publishTime>
     </File>
     <File Include="bin/ASF.Hosts.Web.dll">
-      <publishTime>11/20/2017 12:26:10</publishTime>
+      <publishTime>11/21/2017 08:08:51</publishTime>
     </File>
     <File Include="bin/ASF.Services.Contracts.dll">
       <publishTime>11/12/2017 15:53:09</publishTime>
     </File>
     <File Include="bin/ASF.Services.dll">
-      <publishTime>11/20/2017 12:26:08</publishTime>
+      <publishTime>11/21/2017 08:08:50</publishTime>
     </File>
     <File Include="bin/ASF.Services.Http.dll">
-      <publishTime>11/20/2017 12:26:08</publishTime>
+      <publishTime>11/21/2017 08:08:50</publishTime>
     </File>
     <File Include="bin/ASF.Services.Http.dll.config">
       <publishTime>08/28/2017 22:19:02</publishTime>

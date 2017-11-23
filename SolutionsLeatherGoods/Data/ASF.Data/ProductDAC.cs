@@ -191,7 +191,7 @@ namespace ASF.Data
 
         public List<Product> FindByCookie(string id)
         {
-            const string sqlStatement = "SELECT [Title], [Description], [Price] " +
+            const string sqlStatement = "SELECT [Title], [Description], [Price], [Id] " +
                 "FROM dbo.VW_CarritoActivo WHERE [Cookie]= @id ";
 
             var result = new List<Product>();
@@ -255,6 +255,7 @@ namespace ASF.Data
         {
             var product = new Product
             {
+                Id = GetDataValue<int>(dr, "Id"),
                 Title = GetDataValue<string>(dr, "Title"),
                 Description = GetDataValue<string>(dr, "Description"),
                 Price = GetDataValue<double>(dr, "Price"),

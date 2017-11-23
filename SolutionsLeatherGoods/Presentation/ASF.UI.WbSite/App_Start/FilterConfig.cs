@@ -13,7 +13,7 @@
         {
             AddSearchEngineOptimizationFilters(filters);
             AddSecurityFilters(filters);
-            AddContentSecurityPolicyFilters(filters);
+            //AddContentSecurityPolicyFilters(filters);
         }
 
         /// <summary>
@@ -289,6 +289,7 @@
                     // https://github.com/Modernizr/Modernizr/pull/1263
                     UnsafeInline = true
                 });
+
         }
     }
 }

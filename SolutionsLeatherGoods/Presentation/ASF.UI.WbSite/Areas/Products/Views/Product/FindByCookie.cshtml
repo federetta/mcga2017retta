@@ -13,7 +13,7 @@
 }
 
 <h1>Carrito Activo</h1>
-<p><input type =number name="quantity" ></p>
+
 
 @using (Html.BeginForm("FindByCookie", "Product", FormMethod.Get))
 {
@@ -24,7 +24,7 @@
     </div>
 }
 
-@Html.Grid(Model).Columns(columns =>
+@*@Html.Grid(Model).Columns(columns =>
 {
     columns.Add(foo => foo.Title).Sortable(true).Filterable(true).SetWidth(110);
     columns.Add(foo => foo.Description).Sortable(true).Filterable(true);
@@ -38,108 +38,100 @@
                 "<input type = \"number\" name = \"quantity\">"
             )
         );
-}).WithPaging(10)
+}).WithPaging(10)*@
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-10 col-md-offset-1">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th class="text-center">Precio</th>
+                            <th class="text-center">Total</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+@foreach (var item in Model)
+{
+                        <tr data-item-id="@item.Id">
+                            <td class="col-sm-8 col-md-6">
+                                <div class="media">
+                                    <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">@Html.DisplayFor(modelItem => item.Title)</h4>
+                                        <h5 class="media-heading">@Html.DisplayFor(modelItem => item.Description)</h5>
+                                        <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="col-sm-1 col-md-1" style="text-align: center">
+                                <input type="number" class="form-control cantidad" value="1" min="1" data-item-qty="@item.Id">
+                            </td>
+                            <td class="col-sm-1 col-md-1 text-center precio"><strong  data-item-price="@item.Id">$ @Html.DisplayFor(modelItem => item.Price)</strong></td>
+                            <td class="col-sm-1 col-md-1 text-center resultado">$ <strong  data-item-total="@item.Id"></strong></td>
+                            <td class="col-sm-1 col-md-1">
+                                <button type="button" class="btn btn-danger">
+                                    <span class="glyphicon glyphicon-remove"></span> Remove
+                                </button>
+                            </td>
+                        </tr>
+
+}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
 
 <div class="container">
     <div class="row">
         <div class="col-sm-12 col-md-10 col-md-offset-1">
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th class="text-center">Price</th>
-                        <th class="text-center">Total</th>
-                        <th> </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="col-sm-8 col-md-6">
-                        <div class="media">
-                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
-                            <div class="media-body">
-                                <h4 class="media-heading"><a href="#">Product name</a></h4>
-                                <h5 class="media-heading"> by <a href="#">Brand name</a></h5>
-                                <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
-                            </div>
-                        </div></td>
-                        <td class="col-sm-1 col-md-1" style="text-align: center">
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="3">
-                        </td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>$4.87</strong></td>
-                        <td class="col-sm-1 col-md-1 text-center"><strong>$14.61</strong></td>
-                        <td class="col-sm-1 col-md-1">
-                        <button type="button" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove"></span> Remove
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-6">
-                        <div class="media">
-                            <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
-                            <div class="media-body">
-                                <h4 class="media-heading"><a href="#">Product name</a></h4>
-                                <h5 class="media-heading"> by <a href="#">Brand name</a></h5>
-                                <span>Status: </span><span class="text-warning"><strong>Leaves warehouse in 2 - 3 weeks</strong></span>
-                            </div>
-                        </div></td>
-                        <td class="col-md-1" style="text-align: center">
-                        <input type="email" class="form-control" id="exampleInputEmail1" value="2">
-                        </td>
-                        <td class="col-md-1 text-center"><strong>$4.99</strong></td>
-                        <td class="col-md-1 text-center"><strong>$9.98</strong></td>
-                        <td class="col-md-1">
-                        <button type="button" class="btn btn-danger">
-                            <span class="glyphicon glyphicon-remove"></span> Remove
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h5>Subtotal</h5></td>
-                        <td class="text-right"><h5><strong>$24.59</strong></h5></td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h5>Estimated shipping</h5></td>
-                        <td class="text-right"><h5><strong>$6.94</strong></h5></td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td><h3>Total</h3></td>
-                        <td class="text-right"><h3><strong>$31.53</strong></h3></td>
-                    </tr>
-                    <tr>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>   </td>
-                        <td>
-                        <button type="button" class="btn btn-default">
-                            <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
-                        </button></td>
-                        <td>
-                        <button type="button" class="btn btn-success">
-                            Checkout <span class="glyphicon glyphicon-play"></span>
-                        </button></td>
-                    </tr>
-                </tbody>
-            </table>
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>   </td>
+                            <td><h3>Total</h3></td>
+                            <td class="text-right"><h3><strong>$ <span id="total"></span></strong></h3></td>
+                        </tr>
+                        <tr>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>   </td>
+                            <td>
+                                <button type="button" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
+                                </button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-success">
+                                    Checkout <span class="glyphicon glyphicon-play"></span>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
         </div>
-    </div>
 </div>
-@*<script>
-    $(document).ready(function () {
-        $('.add-item').on('click', function (e) {
-            $.post('/Product/CreateItemCart/' + $(e.target).data('id'), null, function (r) {
-                alert('Producto agregado');
-            });
-        });
-    });
-</script>*@
+<script>
+    var getTotals = function () {
+        var total = 0;
+        $("[data-item-id]").each(function () {
+            var itemId = $(this).data('item-id');
+            var qty = parseFloat($('[data-item-qty=' + itemId + ']').val());
+            var price = parseFloat($('[data-item-price="' + itemId + '"]').text().replace(',', '.'));
+            total += price * qty;
+            $('[data-item-total="' + itemId + '"]').text((price * qty).toFixed(2).replace('.', ','));
+        })
+        $('#total').text(total.toFixed(2).replace('.', ','));
+    };
+    getTotals();
+    $('.cantidad').on('change', getTotals);
+
+</script>
