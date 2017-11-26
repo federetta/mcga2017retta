@@ -19,7 +19,7 @@ namespace ASF.UI.WbSite.Areas.Orders.Controllers
         }
 
         // GET: Orders/Details
-        public ActionResult Details(int id)
+        public ActionResult Details(string id)
         {
             var op = new OrderProcess();
             var order = op.Find(id);
@@ -41,6 +41,30 @@ namespace ASF.UI.WbSite.Areas.Orders.Controllers
             op.Insert(order);
             return RedirectToAction("Index");
         }
+        [HttpPost]
+        // POST: Orders/Checkout
+        public ActionResult Checkout(FormCollection form)
+        {
+            var op = new OrderProcess();
+            var order = op.Insert(new Order() { ClientId = User.Identity.Name });
+            var cookie = Request.Cookies[".AspNet.ApplicationCookie"].Value;
+            var cp = new ProductProcess();
+            var prod = cp.Cookie(cookie);
+           
+            foreach (var item in prod)
+            {
+                var OD = new OrderDetailProcess();
+                var ode = new OrderDetail();
+                ode.OrderId = order.Id;
+                ode.ProductId = item.Id;
+                ode.Price = item.Price;
+                ode.Quantity = Convert.ToInt32(form["qty_" + item.Id]);
+                OD.Insert(ode);
+            }
+
+            return RedirectToAction("Index");
+        }
+
 
         // GET: Orders/Delete
         public ActionResult Delete(int id)
@@ -51,7 +75,7 @@ namespace ASF.UI.WbSite.Areas.Orders.Controllers
         }
 
         // GET: Orders/Edit
-        public ActionResult Edit(int id)
+        public ActionResult Edit(string id)
         {
             var op = new OrderProcess();
             var order = op.Find(id);

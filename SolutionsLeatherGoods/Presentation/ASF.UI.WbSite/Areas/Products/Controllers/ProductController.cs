@@ -102,6 +102,7 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
 
             return RedirectToAction("Index");
         }
+
         [Authorize]
         public ActionResult FindByCookie()
         {

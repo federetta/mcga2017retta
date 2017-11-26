@@ -92,14 +92,14 @@ namespace ASF.Services.Http
         }
 
         [HttpGet]
-        [Route("Find/{id}")]
-        public FindResponseOrder Find(int id)
+        [Route("Findbyemail/{id}")]
+        public FindResponseOrder Find(string email)
         {
             try
             {
                 var response = new FindResponseOrder();
                 var bo = new OrderBusiness();
-                response.Result = bo.Find(id);
+                response.Result = bo.Find(email);
                 return response;
             }
             catch (Exception ex)

@@ -56,10 +56,10 @@ namespace ASF.Business
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Order Find(int id)
+        public Order Find(string email)
         {
             var orderDac = new OrderDAC();
-            var result = orderDac.SelectById(id);
+            var result = orderDac.SelectById(email);
             return result;
         }
 

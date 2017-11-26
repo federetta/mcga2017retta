@@ -40,6 +40,8 @@
         );
 }).WithPaging(10)*@
 
+@using (Html.BeginForm("Checkout", "Order", new { Area = "Orders" }, FormMethod.Post))
+{
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-md-10 col-md-offset-1">
@@ -55,11 +57,12 @@
                     </thead>
                     <tbody>
 @foreach (var item in Model)
-{
+    {
                         <tr data-item-id="@item.Id">
                             <td class="col-sm-8 col-md-6">
                                 <div class="media">
                                     <a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a>
+                                    @*<img class="img-src" src="~/Uploads/@Url.Content(item.Image)" alt="...">*@
                                     <div class="media-body">
                                         <h4 class="media-heading">@Html.DisplayFor(modelItem => item.Title)</h4>
                                         <h5 class="media-heading">@Html.DisplayFor(modelItem => item.Description)</h5>
@@ -68,9 +71,10 @@
                                 </div>
                             </td>
                             <td class="col-sm-1 col-md-1" style="text-align: center">
-                                <input type="number" class="form-control cantidad" value="1" min="1" data-item-qty="@item.Id">
+                                <input type="number" name="qty_@item.Id" class="form-control cantidad" value="1" min="1" data-item-qty="@item.Id">
+                                
                             </td>
-                            <td class="col-sm-1 col-md-1 text-center precio"><strong  data-item-price="@item.Id">$ @Html.DisplayFor(modelItem => item.Price)</strong></td>
+                            <td class="col-sm-1 col-md-1 text-center precio">$ <strong  data-item-price="@item.Id"> @Html.DisplayFor(modelItem => item.Price)</strong></td>
                             <td class="col-sm-1 col-md-1 text-center resultado">$ <strong  data-item-total="@item.Id"></strong></td>
                             <td class="col-sm-1 col-md-1">
                                 <button type="button" class="btn btn-danger">
@@ -100,16 +104,16 @@
                             <td class="text-right"><h3><strong>$ <span id="total"></span></strong></h3></td>
                         </tr>
                         <tr>
-                            <td>   </td>
-                            <td>   </td>
-                            <td>   </td>
+                            <td>  </td>
+                            <td>  </td>
+                            <td>  </td>
                             <td>
-                                <button type="button" class="btn btn-default">
+                                @*<button type="button" class="btn btn-default">
                                     <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
-                                </button>
+                                </button>*@
                             </td>
                             <td>
-                                <button type="button" class="btn btn-success">
+                                <button class="btn btn-success">
                                     Checkout <span class="glyphicon glyphicon-play"></span>
                                 </button>
                             </td>
@@ -117,8 +121,9 @@
                     </tbody>
                 </table>
               </div>
+            </div>
         </div>
-</div>
+    }
 <script>
     var getTotals = function () {
         var total = 0;

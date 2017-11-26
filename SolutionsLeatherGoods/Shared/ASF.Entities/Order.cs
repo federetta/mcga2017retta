@@ -35,7 +35,7 @@ namespace ASF.Entities
         /// </summary>
         [DataMember]
         [DisplayName("Client Id")]
-        public int ClientId { get; set; }
+        public String ClientId { get; set; }
 
         /// <summary>
         /// 

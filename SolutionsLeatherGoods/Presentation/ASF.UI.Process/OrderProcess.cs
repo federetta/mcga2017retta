@@ -30,9 +30,9 @@ namespace ASF.UI.Process
         /// 
         /// </summary>
         /// <returns></returns>
-        public Order Find(int id)
+        public Order Find(string email)
         {
-            var path = "rest/Order/Find/" + id;
+            var path = "rest/Order/Findbyemail/" + email;
             var response = HttpGet<FindResponseOrder>(path, new Dictionary<string, object>(), MediaType.Json);
             return response.Result;
         }
@@ -41,9 +41,10 @@ namespace ASF.UI.Process
         /// 
         /// </summary>
         /// <returns></returns>
-        public void Insert(Order order)
+        public Order Insert(Order order)
         {
             var response = HttpPost<Order>("rest/Order/Add", order, MediaType.Json);
+            return response;
         }
 
         /// <summary>

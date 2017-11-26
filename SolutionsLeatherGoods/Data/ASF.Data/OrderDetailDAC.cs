@@ -26,8 +26,11 @@ namespace ASF.Data
         /// <returns></returns>
         public OrderDetail Create(OrderDetail orderD)
         {
-            const string sqlStatement = "INSERT INTO dbo.OrderDetail([OrderId], [ProductId], [Price], [Quantity], [CreatedBy]) " +
-                "VALUES(@OrderId, @ProductId, @Price, @Quantity, @CreatedBy); SELECT SCOPE_IDENTITY();";
+            //const string sqlStatement = "INSERT INTO dbo.OrderDetail2 ([OrderId], [ProductId], [Price], [Quantity] " +
+            //    "VALUES(@OrderId, @ProductId, @Price, @Quantity);SELECT SCOPE_IDENTITY();";
+
+            const string sqlStatement = "INSERT INTO dbo.OrderDetail2 ([OrderId], [ProductId], [Price], [Quantity]) " +
+         "VALUES(@OrderId, @ProductId, @Price, @Quantity); SELECT SCOPE_IDENTITY();";
 
             var db = DatabaseFactory.CreateDatabase(ConnectionName);
             using (var cmd = db.GetSqlStringCommand(sqlStatement))
@@ -36,9 +39,10 @@ namespace ASF.Data
                 db.AddInParameter(cmd, "@ProductId", DbType.Int32, orderD.ProductId);
                 db.AddInParameter(cmd, "@Price", DbType.Decimal, orderD.Price);
                 db.AddInParameter(cmd, "@Quantity", DbType.Int32, orderD.Quantity);
-                db.AddInParameter(cmd, "@CreatedBy", DbType.Int32, orderD.CreatedBy);
+                //db.AddInParameter(cmd, "@CreatedBy", DbType.Int32, orderD.CreatedBy);
                 // Obtener el valor de la primary key.
                 orderD.Id = Convert.ToInt32(db.ExecuteScalar(cmd));
+                db.ExecuteNonQuery(cmd);
             }
 
             return orderD;

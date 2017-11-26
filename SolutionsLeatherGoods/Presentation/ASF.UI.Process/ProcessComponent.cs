@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -119,7 +120,8 @@ namespace ASF.UI.Process
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(mediaType));
                 var response = client.PostAsJsonAsync(pathAndQuery, value).Result;
                 response.EnsureSuccessStatusCode();
-                return value;
+                var data = ParseResponse<T>(response.Content.ReadAsStringAsync().Result);
+                return data;
 
             }
 
@@ -139,6 +141,11 @@ namespace ASF.UI.Process
 
             }
 
+        }
+
+        private static T ParseResponse<T>(string data)
+        {
+            return JsonConvert.DeserializeObject<T>(data);
         }
     }
 }

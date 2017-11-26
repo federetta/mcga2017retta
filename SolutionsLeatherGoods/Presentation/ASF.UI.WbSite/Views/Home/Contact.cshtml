@@ -1,19 +1,19 @@
 ﻿@{
     ViewBag.Title = "Contact";
-    ViewBag.Description = "The Leather Goods contact page.";
-    ViewBag.Author = "Victor Hugo Contreras";
+    ViewBag.Description = "MCGA 2017 - Proyect";
+    ViewBag.Author = "Federico Retta";
     ViewBag.ReferrerMode = ReferrerMode.OriginWhenCrossOrigin;
-    ViewBag.TwitterCard = new SummaryLargeImageTwitterCard("@VContrerasAR");
+    //ViewBag.TwitterCard = new SummaryLargeImageTwitterCard("@VContrerasAR");
     ViewBag.OpenGraph = new OpenGraphProfile(
         ViewBag.Title,
         new OpenGraphImage(Url.AbsoluteContent("~/content/icons/open-graph-1200x630.png")) { Height = 630, Type = ContentType.Png, Width = 1200 })
     {
         Determiner = OpenGraphDeterminer.Blank,
-        FirstName = "Victor Hugo",
+        FirstName = "Federico Retta",
         Gender = OpenGraphGender.Male,
-        LastName = "Contreras",
+        LastName = "Retta",
         SiteName = Application.Name,
-        Username = "Victor Hugo Contreras"
+        Username = "Federico Retta"
     };
 }
 
@@ -27,13 +27,13 @@
     </section>
     <aside class="col-md-3" role="complementary">
         <address>
-            One Microsoft Way<br>
-            Redmond, WA 98052-6399<br>
+            Correa 4049,<br>
+            Saveedra, CABA<br>
             <abbr title="Phone">P:</abbr>
-            425.555.0100
+            5353-5533
         </address>
         <address>
-            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+            <strong>Soporte Tecnico:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
             <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
         </address>
     </aside>

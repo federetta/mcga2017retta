@@ -210,14 +210,16 @@
                     @*<li><a href="@Url.RouteUrl(HomeControllerRoute.GetAbout)"><span aria-hidden="true" class="fa fa-users"></span> About</a></li>
                     <li><a href="@Url.RouteUrl(HomeControllerRoute.GetContact)"><span aria-hidden="true" class="fa fa-phone"></span> Contact</a></li>
                     <li><a href="@Url.RouteUrl(HomeControllerRoute.GetFeed)"><span aria-hidden="true" class="fa fa-rss"></span> RSS</a></li>*@
-                    <li>@Html.ActionLink("Productos", "Index", "Product", new { Area = "Products" }, null)</li>
-                    <li>@Html.ActionLink("Carrito", "IndexFilter", "Product", new { Area = "Products" }, null)</li>
+                    
+                    <li>@Html.ActionLink("Comprar", "IndexFilter", "Product", new { Area = "Products" }, null)</li>
                     <li>@Html.ActionLink("Carrito Activo", "FindByCookie", "Product", new { Area = "Products" }, null)</li>
+                    <li>@Html.ActionLink("Contactenos", "Index", "Contact")</li>
                    
                     <li class="dropdown">
                         <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown"><span aria-hidden="true" class="fa fa-cogs"></span> Admin <span aria-hidden="true" class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li>@Html.ActionLink("Categorias", "Index", "Category", new { Area = "Categories" }, null)</li>
+                            <li>@Html.ActionLink("Productos", "Index", "Product", new { Area = "Products" }, null)</li>
                             <li>@Html.ActionLink("Clientes", "Index", "Client", new { Area = "Clients" }, null)</li>
                             <li>@Html.ActionLink("Vendedor", "Index", "Dealer", new { Area = "Dealers" }, null)</li>
                             <li>@Html.ActionLink("Paises", "Index", "Country", new { Area = "Countries" }, null)</li>
