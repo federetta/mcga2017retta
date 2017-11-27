@@ -48,8 +48,8 @@ namespace ASF.UI.WbSite.Areas.Orders.Controllers
             var op = new OrderProcess();
             var order = op.Insert(new Order() { ClientId = User.Identity.Name });
             var cookie = Request.Cookies[".AspNet.ApplicationCookie"].Value;
-            var cp = new ProductProcess();
-            var prod = cp.Cookie(cookie);
+            var pp = new ProductProcess();
+            var prod = pp.Cookie(cookie);
            
             foreach (var item in prod)
             {
@@ -61,8 +61,14 @@ namespace ASF.UI.WbSite.Areas.Orders.Controllers
                 ode.Quantity = Convert.ToInt32(form["qty_" + item.Id]);
                 OD.Insert(ode);
             }
+            var cp = new CartProcess();
+            HttpCookie cookie2 = Request.Cookies[".AspNet.ApplicationCookie"];
+            var cart = cp.Cookie(cookie2.Value);
+            var cartid = cart.Id;
+            var cartItem = new CartItemProcess();
+            cartItem.Delete(cart.Id);
 
-            return RedirectToAction("Index");
+            return RedirectToAction("FindByCookie", "Product", new { Area = "Products" });
         }
 
 

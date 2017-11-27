@@ -113,6 +113,17 @@ namespace ASF.UI.WbSite.Areas.Products.Controllers
 
             return View(prod);
         }
+        //Delete by Cookie
+        [Authorize]
+        public ActionResult DeleteByCookie()
+        {
+            //var pp = new ProductProcess();
+            var cookie = Request.Cookies[".AspNet.ApplicationCookie"].Value;
+            var cp = new ProductProcess();
+            var prod = cp.Cookie(cookie);
+
+            return View(prod);
+        }
         //[Authorize(Roles = "admin")]
         [HttpPost]
         // POST: Products/Create

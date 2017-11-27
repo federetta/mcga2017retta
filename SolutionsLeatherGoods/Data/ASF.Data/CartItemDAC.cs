@@ -82,7 +82,7 @@ namespace ASF.Data
         /// <param name="id"></param>
         public void DeleteById(int id)
         {
-            const string sqlStatement = "DELETE dbo.CartItem WHERE [Id]=@Id ";
+            const string sqlStatement = "DELETE dbo.CartItem WHERE [CartId]=@Id ";
             var db = DatabaseFactory.CreateDatabase(ConnectionName);
             using (var cmd = db.GetSqlStringCommand(sqlStatement))
             {
